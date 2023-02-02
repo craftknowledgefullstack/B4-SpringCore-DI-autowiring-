@@ -1,4 +1,4 @@
-package craft.springcode.Main;
+package craft.springcode.autoWire;
 
 import org.springframework.stereotype.Component;
 

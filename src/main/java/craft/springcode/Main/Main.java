@@ -3,6 +3,7 @@ package craft.springcode.Main;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
@@ -21,28 +22,32 @@ public class Main {
 //		
 //		System.out.println(emp);
 //	
-//		Employee emp2= new Employee("sds", 2323);
+	Employee emp2= new Employee(12, "robel");
 //		
+	
 //		System.out.println(emp2);
 		
 		// 1.  ApplicationContext
 		
-		ApplicationContext applicationContext= new ClassPathXmlApplicationContext("springIOC.xml");
+		ApplicationContext applicationContext= new AnnotationConfigApplicationContext(iocConfig.class);
 		
-		Employee employee= (Employee) applicationContext.getBean("emp");
+		Employee employee= (Employee) applicationContext.getBean(Employee.class);
 		
-		System.out.println(employee);
+		employee.hire();
 		
-		Employee employee2= (Employee) applicationContext.getBean("emp");
 		
-		System.out.println(employee);
 		
-		Employee employee3= (Employee) applicationContext.getBean("emp");
-		System.out.println(employee);
-	
-		Employee employee4= (Employee) applicationContext.getBean("emp");
-		System.out.println(employee);
-	
+		
+//		Employee employee2= (Employee) applicationContext.getBean("emp");
+//		
+//		System.out.println(employee);
+//		
+//		Employee employee3= (Employee) applicationContext.getBean("emp");
+//		System.out.println(employee);
+//	
+//		Employee employee4= (Employee) applicationContext.getBean("emp");
+//		System.out.println(employee);
+//	
 		
 		// 2. BeanFactory
 		

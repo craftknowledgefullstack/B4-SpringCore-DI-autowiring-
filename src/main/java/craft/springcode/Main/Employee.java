@@ -1,5 +1,8 @@
 package craft.springcode.Main;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Employee  implements Hr{
 
 	private int empid;
